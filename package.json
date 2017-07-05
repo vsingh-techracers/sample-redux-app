@@ -5,6 +5,8 @@
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"test": "jest",
+    	"test:coverage": "jest --coverage",
+   		"test:watch": "jest --watch",
 		"lint": "./node_modules/.bin/eslint \"./src/{**/*, *}.js\""
 	},
 	"dependencies": {
@@ -21,18 +23,45 @@
 		"remote-redux-devtools": "^0.5.7"
 	},
 	"devDependencies": {
-		"babel-jest": "20.0.3",
-		"babel-preset-react-native": "2.0.0",
+		"babel-jest": "*",
+    	"babel-preset-react-native": "*",
+    	"enzyme": "^2.8.2",
+    	"enzyme-to-json": "^1.5.1",
 		"eslint": "^3.14.0",
 		"eslint-config-airbnb": "^14.0.0",
 		"eslint-plugin-import": "^2.2.0",
 		"eslint-plugin-jsx-a11y": "^3.0.2",
 		"eslint-plugin-react": "^6.9.0",
     	"husky": "^0.13.1",
-		"jest": "20.0.4",
-		"react-test-renderer": "16.0.0-alpha.3"
+		"jest": "*",
+		"react-addons-test-utils": "^15.4.1",
+		"react-dom": "^15.6.1",
+		"react-test-renderer": "*",
+		"redux-mock-store": "^1.2.3"
 	},
 	"jest": {
-		"preset": "react-native"
+		"preset": "react-native",
+		"verbose": true,
+		"coverageReporters": ["html", "text"],
+		"bail": true,
+		"snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"],
+		"setupFiles": [
+		"./jest/setup.js"
+		],
+		"testPathIgnorePatterns ": [
+		"./node_modules/",
+		"./android/",
+		"./ios/"
+		],
+		"notify": true,
+		"moduleFileExtensions": [
+		"js",
+		"json",
+		"jsx",
+		"node"
+		],
+		"globals": {
+		"__DEV__": true
+		}
 	}
 }

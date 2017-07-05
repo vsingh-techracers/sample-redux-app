@@ -32,5 +32,10 @@ module.exports = {
    "import/no-extraneous-dependencies": 0,
    "import/no-unresolved": 0,
    "import/extensions": 0,
- }
+ },
+ "globals": {
+   "describe": true, 
+   "it": true,
+   "expect": true,
+ },
 };
