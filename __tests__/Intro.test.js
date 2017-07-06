@@ -7,8 +7,15 @@ import React from 'react';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import { mount, shallow, render } from 'enzyme';
+// import { mount, shallow, render } from 'enzyme';
 import Intro from '../Intro';
+
+it('renders correctly', () => {
+  const tree = renderer.create(
+    <Intro />,
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
 
 // test('two plus two is four', () => {
 //   expect(2 + 2).toBe(4);
@@ -17,15 +24,80 @@ import Intro from '../Intro';
 // test('object assignment', () => {
 //   const data = {one: 1};
 //   data['two'] = 2;
+// console.log(data);
 //   expect(data).toEqual({one: 1, two: 2});
 // });
 
-it('renders correctly', () => {
-  const wrapper = shallow(<Intro />);
-    expect(wrapper).toMatchSnapshot();
-});
+/* opposite of a matcher */
+// test('adding positive numbers is not zero', () => {
+//   for (let a = 1; a < 10; a++) {
+//     for (let b = 1; b < 10; b++) {
+//       expect(a + b).not.toBe(0);
+//     }
+//   }
+// });
 
 
+/* Numbers */
+// test('adding floating point numbers', () => {
+//   const value = 0.1 + 0.2;
+//   expect(value).not.toBe(0.3);    // It isn't! Because rounding error
+//   expect(value).toBeCloseTo(0.3); // This works.
+// });
+
+// test('there is no I in team', () => {
+//   expect('team').not.toMatch(/I/);
+// });
+
+// test('but there is a "stop" in Christoph', () => {
+//   expect('Christoph').toMatch(/stop/);
+// });
+
+/* Strings */
+// test('there is no I in team', () => {
+//   expect('team').not.toMatch(/I/);
+// });
+
+// test('but there is a "stop" in Christoph', () => {
+//   expect('Christoph').toMatch(/stop/);
+// });
+
+
+/* Arrays */
+
+// const shoppingList = [
+//   'diapers',
+//   'kleenex', 
+//   'trash bags', 
+//   'paper towels', 
+//   'beer',
+// ];
+
+// test('the shopping list has beer on it', () => {
+//   expect(shoppingList).toContain('beer');
+// });
+
+
+/* Exception */
+// function compileAndroidCode() {
+//   throw new ConfigError('you are using the wrong JDK');
+// }
+
+// test('compiling android goes as expected', () => {
+//   expect(compileAndroidCode).toThrow();
+//   expect(compileAndroidCode).toThrow(ConfigError);
+
+//   // You can also use the exact error message or a regexp
+//   expect(compileAndroidCode).toThrow('you are using the wrong JDK');
+//   expect(compileAndroidCode).toThrow(/JDK/);
+// });
+
+
+
+// it('renders correctly', () => {
+//   const wrapper = shallow(<Intro />);
+//     expect(wrapper).toMatchSnapshot();
+// });
 
 // // These serve as integration tests for the jest-react-native preset.
 // it('renders the ActivityIndicator component', () => {
