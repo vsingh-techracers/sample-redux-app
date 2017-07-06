@@ -38,4 +38,12 @@ module.exports = {
    "it": true,
    "expect": true,
  },
+ "env": {
+   "jest": true,
+ },
+ "overrides": [
+    {
+      "excludedFiles": "*.test.js",
+    }
+  ],
 };
