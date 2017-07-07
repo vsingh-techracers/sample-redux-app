@@ -2,6 +2,12 @@
  * Sample React Native Snapshot Test
  */
 
+/* Jest tutorial links  */
+// https://facebook.github.io/jest/docs/getting-started.html#content
+
+/* api reference */
+// https://facebook.github.io/jest/docs/configuration.html
+
 import 'react-native';
 import React from 'react';
 
@@ -10,13 +16,16 @@ import renderer from 'react-test-renderer';
 // import { mount, shallow, render } from 'enzyme';
 import Intro from '../Intro';
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <Intro />,
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
-});
+/* Class with render function */
+// it('renders correctly', () => {
+//   const tree = renderer.create(
+//     <Intro />,
+//   ).toJSON();
+//   expect(tree).toMatchSnapshot();
+// });
 
+/* General test */
+/* Start=============================================================== */
 // test('two plus two is four', () => {
 //   expect(2 + 2).toBe(4);
 // });
@@ -45,14 +54,6 @@ it('renders correctly', () => {
 //   expect(value).toBeCloseTo(0.3); // This works.
 // });
 
-// test('there is no I in team', () => {
-//   expect('team').not.toMatch(/I/);
-// });
-
-// test('but there is a "stop" in Christoph', () => {
-//   expect('Christoph').toMatch(/stop/);
-// });
-
 /* Strings */
 // test('there is no I in team', () => {
 //   expect('team').not.toMatch(/I/);
@@ -64,7 +65,6 @@ it('renders correctly', () => {
 
 
 /* Arrays */
-
 // const shoppingList = [
 //   'diapers',
 //   'kleenex', 
@@ -91,6 +91,9 @@ it('renders correctly', () => {
 //   expect(compileAndroidCode).toThrow('you are using the wrong JDK');
 //   expect(compileAndroidCode).toThrow(/JDK/);
 // });
+
+/* General test */
+/* Stop=============================================================== */
 
 
 
@@ -141,3 +144,135 @@ it('renders correctly', () => {
 //     .toJSON();
 //   expect(tree).toMatchSnapshot();
 // });
+
+/* Testing Asynchronous Code */
+/* Start=============================================================== */
+// /* Callbacks */
+// test('the data is Callbacks', (done) => {
+//   function callback(data) {
+//     console.log('expected data', data);
+//     expect(data).toBe('Callbacks');
+//     done();
+//   }
+//   fetchData(callback);
+// });
+
+// function fetchData(callback) {
+//   callback('Callbacks');
+// }
+
+// /* Promises */
+// test('the data is Promises', async () => {
+//   expect.assertions(1);
+//   return fetchData(false).then((data) => {
+//     console.log('expected data is Promises', data);
+//     expect(data).toBe('Promises');
+//   }).catch((error) => {
+//     console.log('expected data is Error', error);
+//     expect(error).toMatch('Error');
+//   });
+// });
+
+// function fetchData (isPromiseResolve) {
+//   if (isPromiseResolve) {
+//     return Promise.resolve('Promises');
+//   }
+//   return Promise.reject('Error');
+// }
+
+// /* .resolves / .rejects */
+// test('the data is Promises', () => {
+//   expect.assertions(1);
+//   return expect(fetchData(true))
+//       .resolves.toBe('Promises');
+// });
+
+// function fetchData (isPromiseResolve) {
+//   if (isPromiseResolve) {
+//     return Promise.resolve('Promises');
+//   }
+//   return Promise.reject('Error');
+// }
+
+
+/* Async/Await */
+// test('the data is PATA NAHI', async () => {
+//   expect.assertions(1);
+//   const data = await fetchData(true);
+//   console.log('expected data DEKH LO', data);
+//   expect(data).toBe('PATA NAHI');
+// });
+
+// function fetchData (isPromiseResolve) {
+//   if (isPromiseResolve) {
+//     return 'PATA NAHI';
+//   }
+//   return 'KUCH TO GADBAD HAI';
+// }
+
+// test('the fetch fails with an error KUCH TO GADBAD HAI', async () => {
+//   expect.assertions(1);
+//   try {
+//     const data = await fetchData(false);
+//     console.log('expected data DEKH LO', data);
+//     expect(data).toBe('PATA NAHI');
+//   } catch (e) {
+//     console.log('expected data DEKH LO', e);
+//     expect(e).toMatch('KUCH TO GADBAD HAI');
+//   }
+// });
+
+// function fetchData (isPromiseResolve) {
+//   if (isPromiseResolve) {
+//     return Promise.resolve('PATA NAHI');
+//   }
+//   return Promise.reject('KUCH TO GADBAD HAI');
+// }
+
+/* can combine async and await with .resolves or .rejects */
+/* Start */
+// test('the data is PATA NAHI', async () => {
+//   expect.assertions(1);
+//   await expect(fetchData(true)).resolves.toBe('PATA NAHI');
+// });
+
+// test('the fetch fails with an error KUCH TO GADBAD HAI', async () => {
+//   expect.assertions(1);
+//   await expect(fetchData(false)).rejects.toMatch('KUCH TO GADBAD HAI');
+// });
+
+// function fetchData (isPromiseResolve) {
+//   if (isPromiseResolve) {
+//     return Promise.resolve('PATA NAHI');
+//   }
+//   return Promise.reject('KUCH TO GADBAD HAI');
+// }
+
+/* Testing Asynchronous Code */
+/* Stop=============================================================== */
+
+
+// /* Mocking */
+/* Start=============================================================== */
+
+/* module  mocking */
+// it('Test module mocking', () => {
+//   jest.mock('../src/modules/login/screen/Login', () => {
+//     return jest.fn(() => 42);
+//   });
+//   const moduleName = require('../src/modules/login/screen/Login');
+//   console.log('Module mocking', moduleName());
+// });
+
+// /* function  mocking */
+// it('Test function mocking', () => {
+//   const myMock = jest.fn();
+//   const a = new myMock();
+//   const b = {};
+//   const bound = myMock.bind(b);
+//   bound();
+//   console.log('Module mocking', moduleName());
+// });
+
+/* Mocking */
+/* Stop=============================================================== */
