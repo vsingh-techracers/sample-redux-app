@@ -13,6 +13,7 @@ import {
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import loginActions from 'login/actions';
+// import { BaseStyle } from 'skydreamer/styles';
 import { styles as loginStyles } from '../styles/LoginStyles';
 
 console.ignoredYellowBox = ['Warning: View.propTypes'];

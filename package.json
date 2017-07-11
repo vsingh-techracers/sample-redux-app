@@ -1,67 +1,73 @@
 {
-	"name": "App",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest",
-    	"test:coverage": "jest --coverage",
-   		"test:watch": "jest --watch",
-		"lint": "./node_modules/.bin/eslint \"./src/{**/*, *}.js\""
-	},
-	"dependencies": {
-		"base-64": "^0.1.0",
-		"halson": "^2.3.1",
-		"lodash": "^4.17.4",
-		"react": "16.0.0-alpha.3",
-    	"react-native": "0.44.0",
-		"react-native-router-flux": "^3.39.2",
-		"react-redux": "^5.0.2",
-		"redux": "3.6.0",
-		"redux-logger": "^2.7.4",
-		"redux-saga": "^0.14.3",
-		"remote-redux-devtools": "^0.5.7"
-	},
-	"devDependencies": {
-		"babel-jest": "*",
-    	"babel-preset-react-native": "*",
-    	"enzyme": "^2.8.2",
-    	"enzyme-to-json": "^1.5.1",
-		"eslint": "^3.14.0",
-		"eslint-config-airbnb": "^14.0.0",
-		"eslint-plugin-import": "^2.2.0",
-		"eslint-plugin-jsx-a11y": "^3.0.2",
-		"eslint-plugin-react": "^6.9.0",
-    	"husky": "^0.13.1",
-		"jest": "*",
-		"react-addons-test-utils": "^15.4.1",
-		"react-dom": "^15.6.1",
-		"react-test-renderer": "*",
-		"redux-mock-store": "^1.2.3"
-	},
-	"jest": {
-		"preset": "react-native",
-		"verbose": true,
-		"coverageReporters": ["html", "text"],
-		"bail": true,
-		"snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"],
-		"setupFiles": [
-		"./jest/setup.js"
-		],
-		"testPathIgnorePatterns ": [
-		"./node_modules/",
-		"./android/",
-		"./ios/"
-		],
-		"notify": true,
-		"moduleFileExtensions": [
-		"js",
-		"json",
-		"jsx",
-		"node"
-		],
-		"globals": {
-		"__DEV__": true
-		}
-	}
+  "name": "App",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "./node_modules/.bin/eslint \"./src/{**/*, *}.js\""
+  },
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "halson": "^2.3.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "react": "16.0.0-alpha.3",
+    "react-native": "0.44.0",
+    "react-native-router-flux": "^3.39.2",
+    "react-redux": "^5.0.2",
+    "redux": "3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-saga": "^0.14.3",
+    "remote-redux-devtools": "^0.5.7"
+  },
+  "devDependencies": {
+    "babel-jest": "*",
+    "babel-preset-react-native": "*",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "husky": "^0.13.1",
+    "jest": "*",
+    "react-addons-test-utils": "^15.4.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "*",
+    "redux-mock-store": "^1.2.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "verbose": true,
+    "coverageReporters": [
+      "html",
+      "text"
+    ],
+    "bail": true,
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./jest/setup.js"
+    ],
+    "testPathIgnorePatterns ": [
+      "./node_modules/",
+      "./android/",
+      "./ios/"
+    ],
+    "notify": true,
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node"
+    ],
+    "globals": {
+      "__DEV__": true
+    }
+  }
 }

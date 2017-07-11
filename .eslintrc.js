@@ -37,6 +37,7 @@ module.exports = {
    "describe": true, 
    "it": true,
    "expect": true,
+   "fetch": true
  },
  "env": {
    "jest": true,
