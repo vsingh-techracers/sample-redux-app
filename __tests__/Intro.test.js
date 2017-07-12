@@ -275,6 +275,16 @@ describe('Testing function  mocking', () => {
   //   console.log('Basic mock function testing 4 => ', myMock.mock.instances);
   // });
 
+  it('mock any function from module testing', () => {
+    jest.mock('src/config/appConfig'); // this happens automatically with automocking
+    const { getBaseUrl } = require('src/config/appConfig');
+
+    getBaseUrl.mockImplementation(() => 'https://www.fake-url.com/');
+    console.log('mock any function from module testing => ', getBaseUrl());
+    expect(getBaseUrl()).toBe('https://www.fake-url.com/');
+    // > https://www.fake-url.com/
+  });
+
   // it('myMock.mock.calls testing', () => {
   //   console.log('myMock.mock.calls testing 0 => ', myMock);
   //   // const myMock = jest.fn();
@@ -379,18 +389,18 @@ describe('Testing function  mocking', () => {
   //   expect(myMock.mock.instances.length).toBe(3);
   // });
 
-  it('Mock Return Values testing', () => {
-    const myMock = jest.fn();
-    console.log(myMock());
-    // > undefined
+  // it('Mock Return Values testing', () => {
+  //   const myMock = jest.fn();
+  //   console.log(myMock());
+  //   // > undefined
 
-    myMock.mockReturnValueOnce(10)
-    .mockReturnValueOnce('x')
-    .mockReturnValue(true);
+  //   myMock.mockReturnValueOnce(10)
+  //   .mockReturnValueOnce('x')
+  //   .mockReturnValue(true);
 
-    console.log(myMock(), myMock(), myMock(), myMock());
-    // > 10, 'x', true, true
-  });
+  //   console.log(myMock(), myMock(), myMock(), myMock());
+  //   // > 10, 'x', true, true
+  // });
 
   // it('myMock.mock.calls testing', () => {
   //   const myMock = jest.fn((name) => {
