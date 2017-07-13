@@ -101,4 +101,62 @@ describe('Testing expect object', () => {
   // });
   // /* Stop=============================================================== */
   // /* .toHaveBeenCalledWith(arg1, arg2, ...) */
+
+  // /* .toMatchObject(object) */
+  // /* Start=============================================================== */
+  // const houseForSale = {
+  //   bath: true,
+  //   bedrooms: 4,
+  //   kitchen: {
+  //     amenities: ['oven', 'stove', 'washer'],
+  //     area: 20,
+  //     wallColor: 'white',
+  //   },
+  // };
+  // const desiredHouse = {
+  //   bath: true,
+  //   kitchen: {
+  //     amenities: ['oven', 'stove', 'washer'],
+  //     wallColor: 'white',
+  //   },
+  // };
+
+  // test('the house has my desired features', () => {
+  //   expect(houseForSale).toMatchObject(desiredHouse);
+  // });
+  // /* Stop=============================================================== */
+  // /* .toMatchObject(object) */
+
+  /* .toHaveProperty(keyPath, value) */
+  /* Start=============================================================== */
+  // Object containing house features to be tested
+  const houseForSale = {
+    bath: true,
+    bedrooms: 4,
+    kitchen: {
+      amenities: ['oven', 'stove', 'washer'],
+      area: 20,
+      wallColor: 'white',
+    },
+  };
+
+  test('this house has my desired features', () => {
+    // Simple Referencing
+    expect(houseForSale).toHaveProperty('bath');
+    expect(houseForSale).toHaveProperty('bedrooms', 4);
+
+    expect(houseForSale).not.toHaveProperty('pool');
+
+    // Deep referencing using dot notation
+    expect(houseForSale).toHaveProperty('kitchen.area', 20);
+    expect(houseForSale).toHaveProperty('kitchen.amenities', [
+      'oven',
+      'stove',
+      'washer',
+    ]);
+
+    expect(houseForSale).not.toHaveProperty('kitchen.open');
+  });
+  /* Stop=============================================================== */
+  /* .toHaveProperty(keyPath, value) */
 });
