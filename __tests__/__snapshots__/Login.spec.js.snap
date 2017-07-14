@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Testing Login component Shallow Rendering 1`] = `
 <View
   style={
     Object {
@@ -12,6 +12,11 @@ exports[`renders correctly 1`] = `
     }
   }
 >
+  <StatusBar
+    animated={false}
+    barStyle="light-content"
+    showHideTransition="fade"
+  />
   <View
     style={
       Object {
@@ -42,30 +47,17 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+        <TouchableOpacity
+          activeOpacity={0.2}
+          focusedOpacity={0.7}
+          onPress={[Function]}
           style={
             Object {
               "height": 45,
               "justifyContent": "flex-end",
-              "opacity": 1,
               "width": 65,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <Text
             accessible={true}
@@ -87,7 +79,7 @@ exports[`renders correctly 1`] = `
           >
             Next
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
     <View
@@ -177,31 +169,18 @@ exports[`renders correctly 1`] = `
                 }
               }
             >
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
+              <TouchableOpacity
+                activeOpacity={0.2}
+                focusedOpacity={0.7}
+                onPress={[Function]}
                 style={
                   Object {
                     "height": 40,
                     "justifyContent": "center",
                     "marginTop": 5,
-                    "opacity": 1,
                     "width": 30,
                   }
                 }
-                testID={undefined}
-                tvParallaxProperties={undefined}
               >
                 <Text
                   accessible={true}
@@ -218,7 +197,7 @@ exports[`renders correctly 1`] = `
                 >
                   X
                 </Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -226,4 +205,286 @@ exports[`renders correctly 1`] = `
     </View>
   </View>
 </View>
+`;
+
+exports[`Testing Login component Shallow Rendering 2`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(226, 80, 87)",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "width": 750,
+    }
+  }
+>
+  <StatusBar
+    animated={false}
+    barStyle="light-content"
+    showHideTransition="fade"
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgb(226, 80, 87)",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "width": 750,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "height": 45,
+            "justifyContent": "flex-end",
+            "marginTop": 20,
+            "width": 750,
+          }
+        }
+      >
+        <TouchableOpacity
+          activeOpacity={0.2}
+          focusedOpacity={0.7}
+          onPress={[Function]}
+          style={
+            Object {
+              "height": 45,
+              "justifyContent": "flex-end",
+              "width": 65,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontSize": 16,
+                  "fontWeight": "800",
+                  "textAlign": "center",
+                },
+                Object {
+                  "opacity": 1,
+                },
+              ]
+            }
+          >
+            Next
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 3,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 3,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "height": 100,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "height": 30,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 14,
+                  "fontWeight": "800",
+                  "padding": 10,
+                }
+              }
+            >
+              E-mail Address
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 50,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 9,
+                }
+              }
+            >
+              <TextInput
+                autoFocus={true}
+                keyboardType="email-address"
+                onChangeText={[Function]}
+                placeholder="Email Address"
+                placeholderTextColor="#7F7F7F"
+                style={
+                  Object {
+                    "color": "white",
+                    "flex": 1,
+                    "fontSize": 22,
+                    "fontWeight": "300",
+                    "height": 40,
+                    "padding": 10,
+                  }
+                }
+                value="xyz@abc.com"
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <TouchableOpacity
+                activeOpacity={0.2}
+                focusedOpacity={0.7}
+                onPress={[Function]}
+                style={
+                  Object {
+                    "height": 40,
+                    "justifyContent": "center",
+                    "marginTop": 5,
+                    "width": 30,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 16,
+                      "fontWeight": "800",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  X
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Testing Login component Static Rendering 1`] = `
+<view
+  style="flex:1;flex-direction:column;justify-content:center;background-color:rgb(226, 80, 87);width:750px;"
+>
+  <view
+    style="flex:1;flex-direction:column;justify-content:center;background-color:rgb(226, 80, 87);width:750px;"
+  >
+    <view
+      style="flex:1;flex-direction:row;"
+    >
+      <view
+        style="width:750px;height:45px;justify-content:flex-end;align-items:flex-end;margin-top:20px;"
+      >
+        <view
+          style="width:65px;height:45px;justify-content:flex-end;opacity:1;"
+        >
+          <text
+            style="0:[object Object];1:[object Object];"
+          >
+            Next
+          </text>
+        </view>
+      </view>
+    </view>
+    <view
+      style="flex:3;"
+    >
+      <view
+        style="flex:3;"
+      >
+        <view
+          style="height:100px;"
+        >
+          <view
+            style="height:30px;"
+          >
+            <text
+              style="font-size:14px;font-weight:800;padding:10px;color:white;"
+            >
+              E-mail Address
+            </text>
+          </view>
+          <view
+            style="height:50px;flex-direction:row;justify-content:center;"
+          >
+            <view
+              style="flex:9;"
+            >
+              <textinput
+                placeholder="Email Address"
+                style="flex:1;height:40px;padding:10px;font-size:22px;color:white;font-weight:300;"
+                value="xyz@abc.com"
+              />
+            </view>
+            <view
+              style="flex:1;flex-direction:row;"
+            >
+              <view
+                style="width:30px;height:40px;justify-content:center;margin-top:5px;opacity:1;"
+              >
+                <text
+                  style="color:#FFFFFF;font-size:16px;font-weight:800;text-align:center;"
+                >
+                  X
+                </text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
 `;

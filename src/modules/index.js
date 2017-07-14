@@ -2,7 +2,7 @@
 * @providesModule src/modules
 */
 
-import LoginScreen from 'src/module/login/screen/Login';
+import LoginScreen from './login/screen/Login';
 
 export {
     LoginScreen,
